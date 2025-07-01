@@ -1,6 +1,8 @@
 Add validation in controller layer
 vallidation annotations in DTO
 
+change repository layer to introduce multi user
+
 Add exception handling
 should we do multi user then we would need user auth! and a user table
 if multi user is SQL lite the right choice?
