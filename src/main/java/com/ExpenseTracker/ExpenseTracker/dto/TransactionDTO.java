@@ -1,24 +1,17 @@
-package com.ExpenseTracker.ExpenseTracker.model;
+package com.ExpenseTracker.ExpenseTracker.dto;
 
-import jakarta.persistence.*;
+import com.ExpenseTracker.ExpenseTracker.model.Category;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "transaction")
-public class Transaction {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transactionId;
-
-    private LocalDateTime createdAt;
+public class TransactionDTO {
+    private LocalDateTime createdAt;    //we need time stamps at the front end for user
     private LocalDateTime updatedAt;
     private Double amount;
     private Category category;
     private String description;
 
-    public Transaction(Long transactionId, LocalDateTime createdAt, LocalDateTime updatedAt, Double amount, Category category, String description) {
-        this.transactionId = transactionId;
+    public TransactionDTO(LocalDateTime createdAt, LocalDateTime updatedAt, Double amount, Category category, String description) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.amount = amount;
@@ -26,11 +19,12 @@ public class Transaction {
         this.description = description;
     }
 
-    public Transaction() {
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public Long getTransactionId() {
-        return transactionId;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
     public Double getAmount() {
@@ -44,17 +38,7 @@ public class Transaction {
     public String getDescription() {
         return description;
     }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
     public static class Builder{
-        private Long transactionId;
 
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
@@ -62,11 +46,6 @@ public class Transaction {
         private Category category;
         private String description;
 
-        public Builder transactionId(Long transactionId)
-        {
-            this.transactionId = transactionId;
-            return  this;
-        }
         public Builder createdAt(LocalDateTime createdAt)
         {
             this.createdAt = createdAt;
@@ -79,7 +58,7 @@ public class Transaction {
         }
         public Builder amount(Double amount)
         {
-            this.amount =amount;
+            this.amount = amount;
             return this;
         }
         public Builder category(Category category)
@@ -92,9 +71,9 @@ public class Transaction {
             this.description = description;
             return this;
         }
-        public Transaction build ()
+        public TransactionDTO build()
         {
-            return new Transaction(transactionId, createdAt, updatedAt, amount, category, description);
+            return new TransactionDTO(createdAt, updatedAt, amount, category, description);
         }
     }
 }
