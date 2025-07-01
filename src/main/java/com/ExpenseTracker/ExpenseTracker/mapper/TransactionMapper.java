@@ -2,6 +2,7 @@ package com.ExpenseTracker.ExpenseTracker.mapper;
 
 import com.ExpenseTracker.ExpenseTracker.dto.TransactionDTO;
 import com.ExpenseTracker.ExpenseTracker.model.Transaction;
+import com.ExpenseTracker.ExpenseTracker.model.User;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,6 +11,7 @@ public class TransactionMapper {
     {
         return new Transaction.Builder()
                 .transactionId(transaction.getTransactionId())
+                .user(transaction.getUser())
                 .createdAt(transaction.getCreatedAt())
                 .updatedAt(transactionDTO.getUpdatedAt())
                 .amount(transactionDTO.getAmount())
@@ -17,9 +19,10 @@ public class TransactionMapper {
                 .description(transactionDTO.getDescription())
                 .build();
     }
-    public Transaction newEntity(TransactionDTO transactionDTO)
+    public Transaction newEntity(TransactionDTO transactionDTO, User user)
     {
         return new Transaction.Builder()
+                .user(user)
                 .createdAt(transactionDTO.getCreatedAt())
                 .updatedAt(transactionDTO.getUpdatedAt())
                 .description(transactionDTO.getDescription())

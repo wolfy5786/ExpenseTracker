@@ -3,13 +3,14 @@ package com.ExpenseTracker.ExpenseTracker.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String username;
     private String password;
+
 
     public User(Long userId, String username, String password) {
         this.userId = userId;

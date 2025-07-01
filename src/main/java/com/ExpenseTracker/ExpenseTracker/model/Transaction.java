@@ -11,16 +11,22 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transactionId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private Double amount;
+    @Enumerated(EnumType.STRING)
     private Category category;
     private String description;
 
-    public Transaction(Long transactionId, LocalDateTime createdAt, LocalDateTime updatedAt, Double amount, Category category, String description) {
+    public Transaction(Long transactionId, LocalDateTime createdAt, LocalDateTime updatedAt,User user, Double amount, Category category, String description) {
         this.transactionId = transactionId;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.user = user;
         this.amount = amount;
         this.category = category;
         this.description = description;
@@ -31,6 +37,10 @@ public class Transaction {
 
     public Long getTransactionId() {
         return transactionId;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public Double getAmount() {
@@ -55,8 +65,6 @@ public class Transaction {
 
     public static class Builder{
         private Long transactionId;
-        @ManyToOne(fetch = FetchType.LAZY)
-        @JoinColumn(name = "user_id", nullable = false)
         private User user;
 
         private LocalDateTime createdAt;
@@ -69,6 +77,11 @@ public class Transaction {
         {
             this.transactionId = transactionId;
             return  this;
+        }
+        public Builder user(User user)
+        {
+            this.user = user;
+            return this;
         }
         public Builder createdAt(LocalDateTime createdAt)
         {
@@ -97,7 +110,7 @@ public class Transaction {
         }
         public Transaction build ()
         {
-            return new Transaction(transactionId, createdAt, updatedAt, amount, category, description);
+            return new Transaction(transactionId, createdAt, updatedAt, user , amount, category, description);
         }
     }
 }
