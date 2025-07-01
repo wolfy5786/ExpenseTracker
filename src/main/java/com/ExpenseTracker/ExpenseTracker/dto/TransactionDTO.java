@@ -5,6 +5,7 @@ import com.ExpenseTracker.ExpenseTracker.model.Category;
 import java.time.LocalDateTime;
 
 public class TransactionDTO {
+    private Long transactionId;
     private LocalDateTime createdAt;    //we need time stamps at the front end for user
     private LocalDateTime updatedAt;
     private Double amount;
@@ -17,6 +18,10 @@ public class TransactionDTO {
         this.amount = amount;
         this.category = category;
         this.description = description;
+    }
+
+    public Long getTransactionId() {
+        return transactionId;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -40,11 +45,18 @@ public class TransactionDTO {
     }
     public static class Builder{
 
+        private Long transactionId;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
         private Double amount;
         private Category category;
         private String description;
+
+        public Builder transactionId(Long transactionId)
+        {
+            this.transactionId = transactionId;
+            return this;
+        }
 
         public Builder createdAt(LocalDateTime createdAt)
         {

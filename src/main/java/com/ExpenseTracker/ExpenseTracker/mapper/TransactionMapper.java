@@ -2,7 +2,9 @@ package com.ExpenseTracker.ExpenseTracker.mapper;
 
 import com.ExpenseTracker.ExpenseTracker.dto.TransactionDTO;
 import com.ExpenseTracker.ExpenseTracker.model.Transaction;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TransactionMapper {
     public Transaction updateEntity(TransactionDTO transactionDTO, Transaction transaction)
     {
@@ -28,6 +30,7 @@ public class TransactionMapper {
     public TransactionDTO newDto(Transaction transaction)
     {
         return new TransactionDTO.Builder()
+                .transactionId(transaction.getTransactionId())
                 .amount(transaction.getAmount())
                 .category(transaction.getCategory())
                 .description(transaction.getDescription())
