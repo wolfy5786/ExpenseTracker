@@ -54,7 +54,7 @@
 
 ### 1. Clone the Repository
 in bash
-git clone https://github.com/your-username/ExpenseTracker.git
+git clone https://github.com/wolfy5786/ExpenseTracker.git
 cd ExpenseTracker
 
 ### 2. Set up environment variables in docker-compose.yml, like db username password, secret key for JWT auth, 
