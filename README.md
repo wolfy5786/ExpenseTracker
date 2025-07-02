@@ -40,11 +40,7 @@
 
 ---
 
-ExpenseTracker/
-├── backend/         # Spring Boot backend (Dockerized)
-├── frontend/        # React frontend (Dockerized)
-├── docker-compose.yml
-└── README.md
+
 
 
 ## 🛠 Prerequisites
