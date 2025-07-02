@@ -40,6 +40,39 @@
 
 ---
 
+ExpenseTracker/
+├── backend/         # Spring Boot backend (Dockerized)
+├── frontend/        # React frontend (Dockerized)
+├── docker-compose.yml
+└── README.md
+
+
+## 🛠 Prerequisites
+
+- Docker installed: https://www.docker.com/products/docker-desktop
+- Git installed
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+in bash
+git clone https://github.com/your-username/ExpenseTracker.git
+cd ExpenseTracker
+
+### 2. Set up environment variables in docker-compose.yml, like db username password, secret key for JWT auth, 
+
+### 3. docker-compose up --build
+
+🌐 Access the App
+Frontend (React) → http://localhost:3000
+
+Backend (Spring Boot) → http://localhost:8080 
+
+To Stop
+docker-compose down
+
 
 Sample outputs
 ![image](https://github.com/user-attachments/assets/da9b6d26-890e-47eb-95ae-cb6a9372370f)
