@@ -36,6 +36,6 @@
 - React
 - Vite
 - Axios
-- Tailwind CSS *(if used)*
+- Tailwind CSS 
 
 ---
