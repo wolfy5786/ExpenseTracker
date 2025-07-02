@@ -69,6 +69,13 @@ public class TransactionController {
         return transactionService.getTopNTransactions(authentication.getName(), n, ascending);
     }
 
+    @GetMapping("/top-category")
+    public Category getTopCategory(
+            @RequestParam(defaultValue = "true") boolean ascending,
+            Authentication authentication) {
+        return transactionService.getHighestLowestSpendingCategory(authentication.getName(),ascending);
+    }
+
     @PutMapping("/{transactionId}")
     public TransactionDTO updateTransaction(
             @PathVariable Long transactionId,

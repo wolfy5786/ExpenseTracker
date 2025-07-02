@@ -26,6 +26,8 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     List<Transaction> findTop1ByUserOrderByAmountAsc(User user);
 
 
+
+
     //custom queries below are specific to Postgres
 
     @Query(value = "SELECT * FROM transaction WHERE user_id = :userId ORDER BY amount ASC LIMIT :n", nativeQuery = true)
@@ -40,5 +42,12 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
 
     @Query(value = "SELECT * FROM transaction WHERE user_id = :userId AND category = :cat ORDER BY amount DESC LIMIT :n", nativeQuery = true)
     List<Transaction> findTopNByAmtDesc(@Param("userId") Long userId, @Param("n") int n, @Param("cat") Category category);
+
+    @Query(" SELECT t.category, SUM(t.amount) FROM Transaction t WHERE t.user.userId = :userId GROUP BY t.category ORDER BY SUM(t.amount) DESC")
+    List<Object[]> findSpendingPerCategoryDesc(@Param("userId") Long userId);
+
+    @Query("SELECT t.category, SUM(t.amount) FROM Transaction t WHERE t.user.userId = :userId GROUP BY t.category ORDER BY SUM(t.amount) ASC")
+    List<Object[]> findSpendingPerCategoryAsc(@Param("userId") Long userId);
+
 
 }

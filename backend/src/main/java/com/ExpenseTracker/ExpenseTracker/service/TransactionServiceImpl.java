@@ -80,6 +80,29 @@
         }
 
         @Override
+        public Category getHighestLowestSpendingCategory(String username, boolean high) {
+            List<Object[]> result;
+            User user = getUser(username);
+            Long userId = user.getId();
+            if (high) {
+                result = transactionRepository.findSpendingPerCategoryDesc(userId);
+            }
+            else {
+                result = transactionRepository.findSpendingPerCategoryAsc(userId);
+            }
+
+            if (result.isEmpty()) {
+                new ResourceNotFoundException("error");
+            }
+
+            Object[] firstRow = result.get(0);
+
+            Category category = (Category) firstRow[0];
+            Double totalAmount = (Double) firstRow[1]; // optional, use if needed
+            return category;
+        }
+
+        @Override
         public TransactionDTO updateTransaction(String username, Long transactionId, TransactionDTO dto) {
             User user = getUser(username);
             Transaction transaction = transactionRepository.findById(transactionId).orElseThrow(() -> new ResourceNotFoundException("Transaction not found: ID " + transactionId));

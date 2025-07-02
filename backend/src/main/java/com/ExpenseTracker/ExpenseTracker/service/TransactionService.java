@@ -13,6 +13,7 @@ public interface TransactionService {
     List<TransactionDTO> getTransactionsBetweenDates(String username, LocalDateTime from, LocalDateTime to);
     List<TransactionDTO> getTransactionByCategoryBetweenDates(String username, Category category, LocalDateTime from, LocalDateTime to);
     List<TransactionDTO> getTopNTransactions(String username, int n, boolean ascending);
+    Category getHighestLowestSpendingCategory(String username, boolean high);
     TransactionDTO updateTransaction(String username, Long transactionId, TransactionDTO dto);
     void deleteTransaction(String username, Long transactionId);
 }
