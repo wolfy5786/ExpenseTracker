@@ -1,7 +1,11 @@
 package com.ExpenseTracker.ExpenseTracker.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class AuthRequest {
+    @NotBlank
     private String username;
+    @NotBlank
     private String password;
     public AuthRequest(String username, String password) {
         this.username = username;

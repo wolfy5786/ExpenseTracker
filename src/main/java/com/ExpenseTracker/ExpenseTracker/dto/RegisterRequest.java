@@ -1,12 +1,13 @@
 package com.ExpenseTracker.ExpenseTracker.dto;
 
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class RegisterRequest {
-    @NotNull
+    @NotBlank
     private String username;
-    @NotNull
+    @NotBlank
     private String password;
 
     public RegisterRequest(String username, String password) {

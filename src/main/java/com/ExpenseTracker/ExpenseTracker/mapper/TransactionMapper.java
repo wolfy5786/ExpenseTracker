@@ -5,6 +5,8 @@ import com.ExpenseTracker.ExpenseTracker.model.Transaction;
 import com.ExpenseTracker.ExpenseTracker.model.User;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 @Component
 public class TransactionMapper {
     public Transaction updateEntity(TransactionDTO transactionDTO, Transaction transaction)
@@ -12,8 +14,8 @@ public class TransactionMapper {
         return new Transaction.Builder()
                 .transactionId(transaction.getTransactionId())
                 .user(transaction.getUser())
-                .createdAt(transaction.getCreatedAt())
-                .updatedAt(transactionDTO.getUpdatedAt())
+                .createdAt(transaction.getCreatedAt()) //from inital transaction, should not be modified
+                .updatedAt(LocalDateTime.now()) //update at modify
                 .amount(transactionDTO.getAmount())
                 .category(transactionDTO.getCategory())
                 .description(transactionDTO.getDescription())
@@ -23,8 +25,8 @@ public class TransactionMapper {
     {
         return new Transaction.Builder()
                 .user(user)
-                .createdAt(transactionDTO.getCreatedAt())
-                .updatedAt(transactionDTO.getUpdatedAt())
+                .createdAt(LocalDateTime.now()) //update now
+                .updatedAt(LocalDateTime.now()) //update now
                 .description(transactionDTO.getDescription())
                 .amount(transactionDTO.getAmount())
                 .category(transactionDTO.getCategory())

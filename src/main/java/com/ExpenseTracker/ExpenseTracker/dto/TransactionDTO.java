@@ -1,15 +1,27 @@
 package com.ExpenseTracker.ExpenseTracker.dto;
 
 import com.ExpenseTracker.ExpenseTracker.model.Category;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDateTime;
 
 public class TransactionDTO {
     private Long transactionId;
-    private LocalDateTime createdAt;    //we need time stamps at the front end for user
+    private LocalDateTime createdAt;    //we need time stamps at the front end for user display
     private LocalDateTime updatedAt;
+
+    @NotNull(message = "Amount is required")
+    @DecimalMin(value = "0.01", message = "Amount must be greater than 0")
     private Double amount;
+
+    @NotNull
     private Category category;
+
+    @NotBlank(message = "Description cannot be blank")
+    @Size(max = 255, message = "must be under 255 characters")
     private String description;
 
     public TransactionDTO(Long transactionId, LocalDateTime createdAt, LocalDateTime updatedAt, Double amount, Category category, String description) {

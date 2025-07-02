@@ -1,6 +1,8 @@
     package com.ExpenseTracker.ExpenseTracker.service;
 
     import com.ExpenseTracker.ExpenseTracker.dto.TransactionDTO;
+    import com.ExpenseTracker.ExpenseTracker.exception.ResourceNotFoundException;
+    import com.ExpenseTracker.ExpenseTracker.exception.UnauthorizedAccessException;
     import com.ExpenseTracker.ExpenseTracker.mapper.TransactionMapper;
     import com.ExpenseTracker.ExpenseTracker.model.Category;
     import com.ExpenseTracker.ExpenseTracker.model.Transaction;
@@ -32,7 +34,7 @@
         }
         private User getUser(String username) {
             return userRepository.findByUsername(username)
-                    .orElseThrow(() -> new RuntimeException("User not found: " + username));
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found: " + username));
         }
 
         @Override
@@ -80,9 +82,9 @@
         @Override
         public TransactionDTO updateTransaction(String username, Long transactionId, TransactionDTO dto) {
             User user = getUser(username);
-            Transaction transaction = transactionRepository.findById(transactionId).orElseThrow(() -> new RuntimeException("Transaction not found: ID " + transactionId));
+            Transaction transaction = transactionRepository.findById(transactionId).orElseThrow(() -> new ResourceNotFoundException("Transaction not found: ID " + transactionId));
             if (!transaction.getUser().getId().equals(user.getId())) {
-                throw new RuntimeException("Unauthorized to update this transaction");
+                throw new UnauthorizedAccessException("Unauthorized to update this transaction");
             }
             return transactionMapper.newDto(
                     transactionRepository.save(
@@ -94,9 +96,9 @@
         @Override
         public void deleteTransaction(String username, Long transactionId) {
             User user =getUser(username);
-            Transaction transaction = transactionRepository.findById(transactionId).orElseThrow(() -> new RuntimeException("Transaction not found: ID " + transactionId));
+            Transaction transaction = transactionRepository.findById(transactionId).orElseThrow(() -> new ResourceNotFoundException("Transaction not found: ID " + transactionId));
             if (!transaction.getUser().getId().equals(user.getId())) {
-                throw new RuntimeException("Unauthorized to delete this transaction");
+                throw new UnauthorizedAccessException("Unauthorized to delete this transaction");
             }
 
             transactionRepository.delete(transaction);

@@ -2,6 +2,7 @@ package com.ExpenseTracker.ExpenseTracker.service;
 
 import com.ExpenseTracker.ExpenseTracker.dto.AuthRequest;
 import com.ExpenseTracker.ExpenseTracker.dto.RegisterRequest;
+import com.ExpenseTracker.ExpenseTracker.exception.ResourceNotFoundException;
 import com.ExpenseTracker.ExpenseTracker.mapper.UserMapper;
 import com.ExpenseTracker.ExpenseTracker.model.User;
 import com.ExpenseTracker.ExpenseTracker.repository.UserRepository;
@@ -47,7 +48,7 @@ public class UserService {
     }
     public User findByUsername(String username)
     {
-        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+        return userRepository.findByUsername(username).orElseThrow(() -> new ResourceNotFoundException("User not found: " + username));
     }
     public String createToken(AuthRequest authRequest)
     {

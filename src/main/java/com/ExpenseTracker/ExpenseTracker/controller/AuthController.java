@@ -5,8 +5,7 @@ import com.ExpenseTracker.ExpenseTracker.dto.AuthResponse;
 import com.ExpenseTracker.ExpenseTracker.dto.RegisterRequest;
 import com.ExpenseTracker.ExpenseTracker.dto.RegisterResponse;
 import com.ExpenseTracker.ExpenseTracker.model.User;
-import com.ExpenseTracker.ExpenseTracker.repository.UserRepository;
-import com.ExpenseTracker.ExpenseTracker.security.JwtUtil;
+
 import com.ExpenseTracker.ExpenseTracker.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +30,7 @@ public class AuthController {
         this.userService = userService;
     }
     @PostMapping("/login")
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthRequest authRequest) {
+    public ResponseEntity<?> createAuthenticationToken(@Valid @RequestBody AuthRequest authRequest) {
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
