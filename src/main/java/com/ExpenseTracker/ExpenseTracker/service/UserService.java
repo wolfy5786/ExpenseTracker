@@ -9,10 +9,13 @@ import com.ExpenseTracker.ExpenseTracker.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class UserService {
     private UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -44,7 +47,7 @@ public class UserService {
     }
     public User findByUsername(String username)
     {
-        return userRepository.findByUsername(username).orElseThrow();
+        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
     }
     public String createToken(AuthRequest authRequest)
     {

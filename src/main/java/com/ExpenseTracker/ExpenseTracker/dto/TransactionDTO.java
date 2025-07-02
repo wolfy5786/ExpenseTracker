@@ -12,7 +12,8 @@ public class TransactionDTO {
     private Category category;
     private String description;
 
-    public TransactionDTO(LocalDateTime createdAt, LocalDateTime updatedAt, Double amount, Category category, String description) {
+    public TransactionDTO(Long transactionId, LocalDateTime createdAt, LocalDateTime updatedAt, Double amount, Category category, String description) {
+        this.transactionId = transactionId;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.amount = amount;
@@ -85,7 +86,7 @@ public class TransactionDTO {
         }
         public TransactionDTO build()
         {
-            return new TransactionDTO(createdAt, updatedAt, amount, category, description);
+            return new TransactionDTO(transactionId,createdAt, updatedAt, amount, category, description);
         }
     }
 }
