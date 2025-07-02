@@ -73,7 +73,8 @@ SPRING_DATASOURCE_PASSWORD=password
 
 JWT_SECRET=U9jM3LrT5pQsAxV8NnBxWz2KyReGvHdQ
 
-### 3. docker-compose up --build
+### 3.In bash
+run docker-compose up --build
 
 🌐 Access the App
 Frontend (React) → http://localhost:3000
