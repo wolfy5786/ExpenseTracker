@@ -59,6 +59,20 @@ cd ExpenseTracker
 
 ### 2. Set up environment variables in docker-compose.yml, like db username password, secret key for JWT auth, 
 
+POSTGRES_DB=expensetracker
+
+POSTGRES_USER=postgres
+
+POSTGRES_PASSWORD=password
+
+SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/expensetracker
+
+SPRING_DATASOURCE_USERNAME=postgres
+
+SPRING_DATASOURCE_PASSWORD=password
+
+JWT_SECRET=U9jM3LrT5pQsAxV8NnBxWz2KyReGvHdQ
+
 ### 3. docker-compose up --build
 
 🌐 Access the App
