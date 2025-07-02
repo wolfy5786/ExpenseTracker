@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8f1cc3c3-5046-4940-809d-8584680679be" name="Changes" comment="minor fixes and security configs">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/ExpenseTrackerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/build, to do list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/controller/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/RegisterResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/TransactionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/exception/ApiErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/exception/UnauthorizedAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/mapper/TransactionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/model/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/repository/TransactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/security/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/service/TransactionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/service/TransactionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/ExpenseTracker/ExpenseTracker/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/ExpenseTracker/ExpenseTracker/ExpenseTrackerApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/ExpenseTracker/ExpenseTracker/controller/TransactionControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/ExpenseTracker/ExpenseTracker/testconfig/TestSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/ExpenseTracker/ExpenseTracker/testconfig/TestServiceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/ExpenseTracker/ExpenseTracker/testconfig/TransactionTestConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/ExpenseTrackerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/build, to do list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/controller/TransactionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/AuthRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/AuthResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/RegisterRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/RegisterResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/TransactionDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/dto/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/exception/ApiErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/exception/UnauthorizedAccessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/mapper/TransactionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/model/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/model/Transaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/repository/TransactionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/security/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/security/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/service/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/service/TransactionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/service/TransactionServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ExpenseTracker/ExpenseTracker/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ExpenseTracker/ExpenseTracker/ExpenseTrackerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ExpenseTracker/ExpenseTracker/controller/TransactionControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ExpenseTracker/ExpenseTracker/testconfig/TestSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ExpenseTracker/ExpenseTracker/testconfig/TestServiceConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ExpenseTracker/ExpenseTracker/testconfig/TransactionTestConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/data.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ExpenseTracker" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2zFNsczWOVgM9sCRALJYuB5RfCH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Rutgers/Personalprojects/ExpenseTracker/ExpenseTracker/backend"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f1cc3c3-5046-4940-809d-8584680679be" name="Changes" comment="" />
+      <created>1751323069605</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751323069605</updated>
+    </task>
+    <task id="LOCAL-00001" summary="basic Transaction model and getters">
+      <created>1751325249020</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751325249020</updated>
+    </task>
+    <task id="LOCAL-00002" summary="DTO and Mapper">
+      <created>1751332686162</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751332686162</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Repo layer and minor changes to DTO and Mapper">
+      <created>1751335837187</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751335837187</updated>
+    </task>
+    <task id="LOCAL-00004" summary="introducing User OAUth">
+      <created>1751337792154</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751337792154</updated>
+    </task>
+    <task id="LOCAL-00005" summary="UserMapper">
+      <created>1751338085199</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751338085199</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Repository layer">
+      <created>1751376661000</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751376661000</updated>
+    </task>
+    <task id="LOCAL-00007" summary="DB connectivity and migration to Postgres, Unit testing done">
+      <created>1751396641010</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751396641010</updated>
+    </task>
+    <task id="LOCAL-00008" summary="JWT auth">
+      <created>1751408569025</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1751408569025</updated>
+    </task>
+    <task id="LOCAL-00009" summary="JWT auth completed with Unit Testing">
+      <created>1751421455270</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751421455270</updated>
+    </task>
+    <task id="LOCAL-00010" summary="minor design changes">
+      <created>1751423742073</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751423742073</updated>
+    </task>
+    <task id="LOCAL-00011" summary="TransactionService">
+      <created>1751435493424</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1751435493424</updated>
+    </task>
+    <task id="LOCAL-00012" summary="TransactionController">
+      <created>1751436161819</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1751436161819</updated>
+    </task>
+    <task id="LOCAL-00013" summary="custom Exceptions">
+      <created>1751436459707</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1751436459707</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Exception handling and validation">
+      <created>1751438193870</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1751438193870</updated>
+    </task>
+    <task id="LOCAL-00015" summary="minor fixes, and cleared a few Unit testing">
+      <created>1751443382461</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1751443382461</updated>
+    </task>
+    <task id="LOCAL-00016" summary="minor fixes and security configs">
+      <created>1751470805474</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1751470805474</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="basic Transaction model and getters" />
+    <MESSAGE value="DTO and Mapper" />
+    <MESSAGE value="Repo layer and minor changes to DTO and Mapper" />
+    <MESSAGE value="introducing User OAUth" />
+    <MESSAGE value="UserMapper" />
+    <MESSAGE value="Repository layer" />
+    <MESSAGE value="DB connectivity and migration to Postgres, Unit testing done" />
+    <MESSAGE value="JWT auth" />
+    <MESSAGE value="JWT auth completed with Unit Testing" />
+    <MESSAGE value="minor design changes" />
+    <MESSAGE value="TransactionService" />
+    <MESSAGE value="TransactionController" />
+    <MESSAGE value="custom Exceptions" />
+    <MESSAGE value="Exception handling and validation" />
+    <MESSAGE value="minor fixes, and cleared a few Unit testing" />
+    <MESSAGE value="minor fixes and security configs" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fixes and security configs" />
+  </component>
+</project>
