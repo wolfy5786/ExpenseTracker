@@ -53,11 +53,11 @@
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
-in bash
+in bash run
 git clone https://github.com/wolfy5786/ExpenseTracker.git
 cd ExpenseTracker
 
-### 2. Set up environment variables in docker-compose.yml, like db username password, secret key for JWT auth, 
+### 2. Set up environment variables in docker-compose.yml 
 
 POSTGRES_DB=expensetracker
 
@@ -73,15 +73,19 @@ SPRING_DATASOURCE_PASSWORD=password
 
 JWT_SECRET=U9jM3LrT5pQsAxV8NnBxWz2KyReGvHdQ
 
-### 3.In bash
-run docker-compose up --build
+### 3.In bash run 
+docker-compose up --build
 
 🌐 Access the App
 Frontend (React) → http://localhost:3000
 
 Backend (Spring Boot) → http://localhost:8080 
 
-To Stop
+demo username : cake
+demo password : chef
+it has some mock data
+
+To Stop run on bash
 docker-compose down
 
 
