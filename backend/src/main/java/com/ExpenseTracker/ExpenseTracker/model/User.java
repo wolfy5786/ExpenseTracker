@@ -3,7 +3,11 @@ package com.ExpenseTracker.ExpenseTracker.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users",
+        indexes = {
+                @Index(name = "idx_userId", columnList = "userId"),
+                @Index(name = "idx_username", columnList = "username")}
+)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
