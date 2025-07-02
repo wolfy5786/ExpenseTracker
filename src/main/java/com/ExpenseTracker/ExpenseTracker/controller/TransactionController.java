@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/transactions")
-@CrossOrigin(origins = "*") // Optional: for frontend integration
 public class TransactionController {
 
     private final TransactionService transactionService;
@@ -33,6 +32,7 @@ public class TransactionController {
 
     @GetMapping
     public List<TransactionDTO> getAllTransactions(Authentication authentication) {
+        System.out.println("hey there");
         return transactionService.getAllTransactions(authentication.getName());
     }
 
