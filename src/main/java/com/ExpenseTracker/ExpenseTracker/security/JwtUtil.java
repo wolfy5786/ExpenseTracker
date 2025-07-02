@@ -2,12 +2,14 @@ package com.ExpenseTracker.ExpenseTracker.security;
 
 import io.jsonwebtoken.*;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Date;
 import java.util.function.Function;
 
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +17,16 @@ import org.springframework.stereotype.Component;
 public class JwtUtil {
     private static final String SECRET_KEY = "your-256-bit-secret-goes-here...";
 
+    @Value("${jwt.secret:default-test-secret-1234567890123456}")
+    private String secret;
+
     private Key getSigningKey() {
-        return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+        return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
+
+//    private Key getSigningKey() {
+//        return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+//    }
 
 
     public String extractUsername(String token) {

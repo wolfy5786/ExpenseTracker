@@ -1,0 +1,3 @@
+--INSERT INTO users (user_id, username, password) VALUES
+--(1, 'newUser', '$2a$10$nOUIs5kJ7naTuTFkBy1veuEvQ.CeJytLRF4HzZIVtZq/o0zQMEYKa'),
+--(2, 'testUser', '$2a$10$nOUIs5kJ7naTuTFkBy1veuEvQ.CeJytLRF4HzZIVtZq/o0zQMEYKa');

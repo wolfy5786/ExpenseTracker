@@ -7,7 +7,9 @@ import com.ExpenseTracker.ExpenseTracker.dto.RegisterResponse;
 import com.ExpenseTracker.ExpenseTracker.model.User;
 import com.ExpenseTracker.ExpenseTracker.repository.UserRepository;
 import com.ExpenseTracker.ExpenseTracker.security.JwtUtil;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -18,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -42,25 +45,27 @@ public class AuthController {
         this.passwordEncoder = passwordEncoder;
     }
     @PostMapping("/login")
-    public AuthResponse createAuthenticationToken(@RequestBody AuthRequest authRequest) {
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthRequest authRequest) {
         try {
-            Authentication authentication = authenticationManager.authenticate(
+            authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             authRequest.getUsername(), authRequest.getPassword())
             );
         } catch (BadCredentialsException e) {
-            throw new RuntimeException("Invalid username or password", e);
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(new RegisterResponse("Invalid username or password"));
         }
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.getUsername());
         final String jwt = jwtUtil.generateToken(userDetails);
         User user = userRepository.findByUsername(authRequest.getUsername()).orElseThrow();
 
-        return new AuthResponse(jwt, user.getUsername());
+        return ResponseEntity.ok(new AuthResponse(jwt, user.getUsername()));
     }
 
+
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@RequestBody RegisterRequest request) {
+    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest request) {
         if (userRepository.findByUsername(request.getUsername()).isPresent()) {
             return ResponseEntity
                     .badRequest()

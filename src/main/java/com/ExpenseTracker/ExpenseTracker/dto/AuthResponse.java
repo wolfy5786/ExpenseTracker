@@ -1,16 +1,17 @@
 package com.ExpenseTracker.ExpenseTracker.dto;
 
+
 public class AuthResponse {
-    private String jwt;
+    private String token;
     private String username;
 
-    public AuthResponse(String jwt, String username) {
-        this.jwt = jwt;
+    public AuthResponse(String token, String username) {
+        this.token = token;
         this.username = username;
     }
 
-    public String getJwt() {
-        return jwt;
+    public String getToken() {
+        return token;
     }
 
     public String getUsername() {
