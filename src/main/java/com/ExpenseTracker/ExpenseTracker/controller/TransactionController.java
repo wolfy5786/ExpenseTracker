@@ -43,10 +43,11 @@ public class TransactionController {
         return transactionService.getTransactionsByCategory(authentication.getName(), category);
     }
 
+
     @GetMapping("/range")
     public List<TransactionDTO> getTransactionsBetweenDates(
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to,
+            @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
+            @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to,
             Authentication authentication) {
         return transactionService.getTransactionsBetweenDates(authentication.getName(), from, to);
     }
@@ -54,8 +55,8 @@ public class TransactionController {
     @GetMapping("/category-range")
     public List<TransactionDTO> getTransactionsByCategoryBetweenDates(
             @RequestParam Category category,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to,
+            @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
+            @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to,
             Authentication authentication) {
         return transactionService.getTransactionByCategoryBetweenDates(authentication.getName(), category, from, to);
     }

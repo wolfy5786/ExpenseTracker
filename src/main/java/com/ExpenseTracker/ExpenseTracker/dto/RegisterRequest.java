@@ -15,6 +15,9 @@ public class RegisterRequest {
         this.password = password;
     }
 
+    public RegisterRequest() {
+    }
+
     public String getUsername() {
         return username;
     }

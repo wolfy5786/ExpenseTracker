@@ -33,6 +33,15 @@ public class TransactionDTO {
         this.description = description;
     }
 
+    public TransactionDTO(Double amount, Category category, String description) {
+        this.amount = amount;
+        this.category = category;
+        this.description = description;
+    }
+
+    public TransactionDTO() {
+    }
+
     public Long getTransactionId() {
         return transactionId;
     }
@@ -43,6 +52,18 @@ public class TransactionDTO {
 
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Double getAmount() {
