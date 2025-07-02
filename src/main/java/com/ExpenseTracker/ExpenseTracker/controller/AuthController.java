@@ -7,6 +7,7 @@ import com.ExpenseTracker.ExpenseTracker.dto.RegisterResponse;
 import com.ExpenseTracker.ExpenseTracker.model.User;
 import com.ExpenseTracker.ExpenseTracker.repository.UserRepository;
 import com.ExpenseTracker.ExpenseTracker.security.JwtUtil;
+import com.ExpenseTracker.ExpenseTracker.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,23 +27,12 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
-    private final UserDetailsService userDetailsService;
-    private final JwtUtil jwtUtil;
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
+    private final UserService userService;
 
     @Autowired
-    public AuthController(
-            AuthenticationManager authenticationManager,
-            UserDetailsService userDetailsService,
-            JwtUtil jwtUtil,
-            UserRepository userRepository,
-            PasswordEncoder passwordEncoder) {
+    public AuthController(AuthenticationManager authenticationManager, UserService userService) {
         this.authenticationManager = authenticationManager;
-        this.userDetailsService = userDetailsService;
-        this.jwtUtil = jwtUtil;
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
+        this.userService = userService;
     }
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthRequest authRequest) {
@@ -56,9 +46,9 @@ public class AuthController {
                     .body(new RegisterResponse("Invalid username or password"));
         }
 
-        final UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.getUsername());
-        final String jwt = jwtUtil.generateToken(userDetails);
-        User user = userRepository.findByUsername(authRequest.getUsername()).orElseThrow();
+        final String jwt = userService.createToken(authRequest);
+
+        User user = userService.findByUsername(authRequest.getUsername());
 
         return ResponseEntity.ok(new AuthResponse(jwt, user.getUsername()));
     }
@@ -66,18 +56,13 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest request) {
-        if (userRepository.findByUsername(request.getUsername()).isPresent()) {
+        if (userService.UserExistsUsername(request.getUsername())) {
             return ResponseEntity
                     .badRequest()
                     .body(new RegisterResponse("Username already exists"));
         }
+        userService.registerUser(request);
 
-        User newUser = new User.Builder()
-                .username(request.getUsername())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .build();
-
-        userRepository.save(newUser);
         return ResponseEntity.ok(new RegisterResponse("User registered successfully"));
     }
 
