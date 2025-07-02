@@ -41,6 +41,49 @@
 ---
 
 
+
+
+## 🛠 Prerequisites
+
+- Docker installed: https://www.docker.com/products/docker-desktop
+- Git installed
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+in bash
+git clone https://github.com/your-username/ExpenseTracker.git
+cd ExpenseTracker
+
+### 2. Set up environment variables in docker-compose.yml, like db username password, secret key for JWT auth, 
+
+POSTGRES_DB=expensetracker
+
+POSTGRES_USER=postgres
+
+POSTGRES_PASSWORD=password
+
+SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/expensetracker
+
+SPRING_DATASOURCE_USERNAME=postgres
+
+SPRING_DATASOURCE_PASSWORD=password
+
+JWT_SECRET=U9jM3LrT5pQsAxV8NnBxWz2KyReGvHdQ
+
+### 3. docker-compose up --build
+
+🌐 Access the App
+Frontend (React) → http://localhost:3000
+
+Backend (Spring Boot) → http://localhost:8080 
+
+To Stop
+docker-compose down
+
+
 Sample outputs
 ![image](https://github.com/user-attachments/assets/da9b6d26-890e-47eb-95ae-cb6a9372370f)
 ![image](https://github.com/user-attachments/assets/fefa6c63-2639-4cb0-9a71-dcd67b7e0209)
