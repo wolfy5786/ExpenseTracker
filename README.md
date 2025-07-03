@@ -88,6 +88,16 @@ it has some mock data
 To Stop run on bash
 docker-compose down
 
+## User Interface
+Refer the imgaes below for interface
+![image](https://github.com/user-attachments/assets/6ce76dd4-f162-4956-8fae-5e8ed9f5fbce)
+![image](https://github.com/user-attachments/assets/53e47e35-f3e0-42a6-8503-a5486f773933)
+![image](https://github.com/user-attachments/assets/4b65de7b-eea1-4492-b439-8eb7628ff348)
+![image](https://github.com/user-attachments/assets/33be4a23-cdf0-477f-a333-b160daaf0feb)
+![image](https://github.com/user-attachments/assets/96b40650-2f8c-4aec-9260-9db805d7f039)
+![image](https://github.com/user-attachments/assets/6b8ead98-e2b8-4226-b8c7-dcfa501c1609)
+
+
 
 Sample outputs
 ![image](https://github.com/user-attachments/assets/da9b6d26-890e-47eb-95ae-cb6a9372370f)
